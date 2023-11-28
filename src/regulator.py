@@ -22,14 +22,16 @@ class Regulator:
             print('palavra ja existente:', value)
 
     def remove_use_case(self, value: str):
-        if not self.tree.search(value):
+        if not self.tree.search(value=value):
             print('palavra inexistente:', value)
         else:
-            self.tree.remove(value)
             if len(value) < 6:
                 self.list_1.remove(value)
             else:
-                self.list_2.remove(value) 
+                self.list_2.remove(value)
+            self.tree.remove(value)
+            
+            print(f'palavra removida: {value}') 
     
     def search_use_case(self, value: str):
         res = self.tree.search(value)
@@ -54,4 +56,7 @@ class Regulator:
             print('lista vazia')
     
     def post_order(self):
-        self.tree.post_order_traversal()
+        if not self.tree.root:
+            return print('arvore vazia')
+
+        self.tree.pre_order_traversal()

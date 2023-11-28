@@ -15,9 +15,17 @@ class BinaryTree:
             node = self.root
 
         if node is None:
-            return None
+            return
+        
+        lefter = 'nil'
+        righter = 'nil'
+        
+        if node.left:
+            lefter = node.left
+        if node.right:
+            righter = node.right
 
-        print(node)
+        print(f'palavra: {node} fesq: {lefter} fdir: {righter}')
         self.pre_order_traversal(node.left)
         self.pre_order_traversal(node.right)
 
@@ -72,13 +80,18 @@ class BinaryTree:
     
     #Percurso em pós ordem
     def post_order_traversal(self, node=None):
+        lefter = 'nil'
+        righter = 'nil'
         if node is None:
             node = self.root
         if node.left:
+            lefter = node.left
             self.post_order_traversal(node.left)
         if node.right:
+            righter = node.right
             self.post_order_traversal(node.right)
-        print(f'palavra: {node.data} fesq: {node.left} fdir: {node.right}')
+
+        print(f'palavra: {node.data} fesq: {lefter} fdir: {righter}')
 
     def height(self, node=None):
         if node is None:
