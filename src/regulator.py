@@ -3,6 +3,9 @@ from src.entities.node import Node
 from .entities.tree import BinarySearchTree
 
 class Regulator:
+    '''
+    Classe para instanciar e regular os metodos especificos de cada 'endpoint' do algoritmo.
+    '''
     def __init__(self) -> None:
         self.tree = BinarySearchTree()
         self.list_1 = LinkedList()

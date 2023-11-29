@@ -9,8 +9,11 @@ class BinaryTree:
         else:
             self.root = None
     
-    #Percurso em pré ordem
     def pre_order_traversal(self, node='root'):
+        '''
+            Funcao responsavel por percorrer em pre ordem todos os nos da arvore 
+            e imprimir de acordo com o especificado.
+        '''
         if node == 'root':
             node = self.root
 
@@ -29,16 +32,6 @@ class BinaryTree:
         self.pre_order_traversal(node.left)
         self.pre_order_traversal(node.right)
 
-    #Percurso em ordem
-    def inorder_traversal(self, node=None):
-        if node is None:
-            node = self.root
-        if node.left:
-            self.inorder_traversal(node.left)
-        print(node)
-        if node.right:
-            self.inorder_traversal(node.right)
-    
     
     def by_number_traversal(self, number: int, node=None, printed=False):
         '''
@@ -78,21 +71,6 @@ class BinaryTree:
         
         return printed
     
-    #Percurso em pós ordem
-    def post_order_traversal(self, node=None):
-        lefter = 'nil'
-        righter = 'nil'
-        if node is None:
-            node = self.root
-        if node.left:
-            lefter = node.left
-            self.post_order_traversal(node.left)
-        if node.right:
-            righter = node.right
-            self.post_order_traversal(node.right)
-
-        print(f'palavra: {node.data} fesq: {lefter} fdir: {righter}')
-
     def height(self, node=None):
         if node is None:
             node = self.root

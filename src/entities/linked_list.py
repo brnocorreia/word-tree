@@ -34,6 +34,9 @@ class LinkedList:
         return True
     
     def display_all(self):
+        '''
+            Funcao responsavel por imprimir todos os nos da lista.
+        '''
         if not self.head:
             return print('lista vazia')
         p = self.head
@@ -42,6 +45,10 @@ class LinkedList:
             p = p.next
 
     def display_by_number(self, number: int):
+        '''
+            Funcao responsavel por imprimir todos os nos da lista 
+            que tenham a qtd de letras definida.
+        '''
         hasMatch = False
         p = self.head
         while p:
@@ -54,7 +61,8 @@ class LinkedList:
 
     def display_by_alphabetic(self, init: str, end: str):
         '''
-            Função responsável por imprimir todos os nós da lista num intervalo do alfabeto (ex.: Palavras de A até D)
+            Funcao responsavel por imprimir todos os nos da lista 
+            num intervalo do alfabeto (ex.: Palavras de A ate D).
         '''
         hasMatch = False
         p = self.head
